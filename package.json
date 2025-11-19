@@ -1,11 +1,13 @@
 {
   "name": "centstage-backend",
   "version": "1.0.0",
-  "main": " node src/server.js",
+  "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "prisma": "prisma",
+    "build": "npx prisma generate",
+    "deploy": "npx prisma migrate deploy",
+    "postinstall": "npx prisma generate",
     "test": "jest --runInBand"
   },
   "dependencies": {
@@ -13,7 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.2",
-    "prisma": "^5.0.0"
+    "prisma": "^6.19.0"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
